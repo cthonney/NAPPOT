@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+5.times do |number|
+
+  Spot.create!(
+    title: Faker::Restaurant.name   ,
+    address: Faker::Address.full_address,
+    latitude:Faker::Address.latitude,
+    longitude:Faker::Address.longitude,
+    capacity:Faker::Number.between(1,10),
+    price:Faker::Number.between(50,100),
+    description:Faker::Restaurant.description,
+
+  )
+end
