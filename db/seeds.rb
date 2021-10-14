@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+3.times do |i|
+  User.create!(email: "remi#{i}@gmail.com", password: "12345678")
+end
+
+
+3.times do |i|
+  Spot.create!(title: "Tour Eiffel #{i}", owner: User.first)
+end
