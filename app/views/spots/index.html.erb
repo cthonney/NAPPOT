@@ -2,7 +2,28 @@
   <h1>Liste des Spots :</h1>
   <h2>Profitez d'une sieste parfaite</h2>
   <p id="notice"><%= notice %></p>
+
+  <div class="card" style="width: 18rem;">
+  <% @spots.each do |spot| %>
+   <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= spot.title %></h5>
+      <p class="card-Description"><%= spot.description %></p>
+      <p class="spot-capacity"><%= spot.capacity %></p>
+      <p class="spot-address"><%= spot.address %></p>
+      <p class="spot-price"><%= spot.price %></p>
+      <a href="#" class="btn btn-primary">Book</a>
+
+    </div>
+  <%end%>
+
+  <%= link_to 'New Restaurant', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
+ </div>
+<!--
   <table class="table">
+  
+  
+
     <thead class="thead-dark">
       <tr>
         <th>Name</th>
@@ -31,4 +52,6 @@
 
   <br>
   <%= link_to 'New Restaurant', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
+-->
+
 </div>
