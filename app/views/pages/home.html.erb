@@ -1,2 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="background">
+  <div class="content-center">
+    <h1>Find your perfect spot for napping</h1>
+    <p>Nappot is the best app to help you find a spot anywhere to sleep.</p>
+    <div class="list-cards">
+      <div class="card-homepage">
+        <strong>Tired..</strong>
+        <%= image_tag "fatigue.png", class: "image-card-homepage" %>
+        <p>Work, Traffic Jams, Stress.. All these things that make your productivity and mood down</p>
+      </div>
+      <div class="card-homepage">
+        <strong>Find a Spot..</strong>
+        <%= image_tag "loupe.png", class: "image-card-homepage" %>
+        <p>Nappot is here to help you find the nearest and best spot to make a nap</p>
+      </div>
+      <div class="card-homepage">
+        <strong>30min of Nap..</strong>
+        <%= image_tag "day.png", class: "image-card-homepage" %>
+        <p>Enjoy a full recovery time in cocooning spots</p>
+      </div>
+      <div class="card-homepage">
+        <strong>Productivity</strong>
+        <%= image_tag "startup.png", class: "image-card-homepage" %>
+        <p>Go back to your job with the energy of 1000 carrots</p>
+      </div>
+    </div>
+    <div>
+      <%= link_to "/spots" do %>
+        <button type="button" class="button-homepage">See Available Spots</button>
+      <% end %>
+    </div>
+  </div>
+</div>
+
