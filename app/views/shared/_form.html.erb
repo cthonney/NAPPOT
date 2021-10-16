@@ -1,0 +1,29 @@
+<%= simple_form_for @spot do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Title" }%>
+    <%= f.input :address,
+                required: true,
+                input_html: { autocomplete: "Address" } %>
+    <%= f.input :description,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Description" }%>
+    <%= f.input :capacity,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Capacity" }%>
+    <%= f.input :price,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Price" }%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+
