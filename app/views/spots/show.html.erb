@@ -14,7 +14,7 @@
   <%= @spot.description %>
   <strong>Price:</strong>
   <%= @spot.price %>
-
+ <%= render 'shared/carouselshow', spot: @spot %>
 
 </p>
 
@@ -22,4 +22,7 @@
 <%= link_to 'Back', spots_path, :class => "btn btn-secondary" %>
 
  </div>
+
+
+
 
