@@ -5,6 +5,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -13,9 +14,11 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
+    @spot.user_id=current_user.id
     @spot.save
 
     # no need for app/views/restaurants/create.html.erb
+
     redirect_to spot_path(@spot)
   end
 
