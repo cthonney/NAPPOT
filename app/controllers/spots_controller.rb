@@ -42,9 +42,11 @@ class SpotsController < ApplicationController
     redirect_to spots_path
   end
 
+
+
   private
 
   def spot_params
-    params.require(:spot).permit(:address, :title, :description, :capacity, :price)
+    params.require(:spot).permit(:address, :title, :description, :capacity, :price, photos: [])
   end
 end
