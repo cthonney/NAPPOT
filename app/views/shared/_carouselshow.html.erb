@@ -2,11 +2,11 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
   <div class="carousel-item active">
-       <img src="<%= cloudinary_url( spot.photos.first.key, :width => 300, :height => 200, :crop => :fill)  %>" class="d-block w-100" alt="...">
+       <%= cl_image_tag(spot.photos.first.key, :width => 400, :height => 250, :crop => :fill, class:"d-block w-100 h-100")%>
       </div>
    <% @spot.photos.slice(1..@spot.photos.length).each do |photo| %>
      <div class="carousel-item">
-       <img src="<%= cloudinary_url( photo.key, :width => 300, :height => 200, :crop => :fill) %>" class="d-block w-100" alt="...">
+       <%= cl_image_tag(photo.key, :width => 400, :height => 250, :crop => :fill, class:"d-block w-100 h-100")%>
       </div>
     <% end %>
   </div>
@@ -19,5 +19,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 
 

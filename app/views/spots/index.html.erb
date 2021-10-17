@@ -7,7 +7,7 @@
     <div class="container">
       <% @spots.each do |spot| %>
         <div class="card-product">
-          <img src="<%= cloudinary_url spot.photos.first.key %>" class="d-block w-30" alt="...">
+          <%= cl_image_tag(spot.photos.first.key, :width => 300, :height => 200, :crop => :fill)%>
           <div class="card-product-infos">
             <h2><%= spot.title %></h2>
             <p>Location: <%= spot.address %></p>
