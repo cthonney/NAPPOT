@@ -10,8 +10,8 @@
           <img src="<%= cl_image_path spot.photos.first.key %>" class="d-block w-30" alt="...">
           <div class="card-product-infos">
             <h2><%= spot.title %></h2>
-            <p><%= spot.address %></p>
-            <p><%= spot.price %></p>
+            <p>Location: <%= spot.address %></p>
+            <p> Price: <%=  spot.price %> MUR</p>
             <%= link_to 'Show', spot, class: "text-white btn btn-primary"%>
             <%= link_to 'Edit', edit_spot_path(spot), class: "text-white btn btn-warning"%>
             <%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
