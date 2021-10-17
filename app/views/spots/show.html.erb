@@ -1,28 +1,21 @@
 <div class="background">
-<div class="mx-auto" style="width: 400px;" >
-<p>
-  <strong>Name:</strong>
-  <%= @spot.title %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @spot.address %>
-  <strong>Capacity:</strong>
-  <%= @spot.capacity %>
-  <strong>Description:</strong>
-  <%= @spot.description %>
-  <strong>Price:</strong>
-  <%= @spot.price %>
- <%= render 'shared/carouselshow', spot: @spot %>
-
-</p>
-
-<%= link_to 'Edit', edit_spot_path(@spot), :class => "btn btn-warning" %> |
-<%= link_to 'Back', spots_path, :class => "btn btn-secondary" %>
-
- </div>
- </div>
-
-
-
+  <div class="mx-auto" style="width: 400px;" >
+    <p>
+      <strong>Name:</strong>
+      <%= @spot.title %>
+    </p>
+    <p>
+      <strong>Address:</strong>
+      <%= @spot.address %>
+      <strong>Capacity:</strong>
+      <%= @spot.capacity %>
+      <strong>Description:</strong>
+      <%= @spot.description %>
+      <strong>Price:</strong>
+      <%= @spot.price %>
+      <%= render 'shared/carouselshow', spot: @spot %>
+    </p>
+    <%= link_to 'Edit', edit_spot_path(@spot), :class => "btn btn-warning" %> |
+    <%= link_to 'Back', spots_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

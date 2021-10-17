@@ -1,79 +1,23 @@
 <div class="background">
-<div class="container">
-  <h1>Liste des Spots :</h1>
-  <h2>Profitez d'une sieste parfaite</h2>
-  <p id="notice"><%= notice %></p>
-
-  <table class="table">
+<h1>Liste des Spots :</h1>
+  <div class="cards">
 
 
-
-    <thead class="thead-dark">
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Address</th>
-        <th>Capacity</th>
-        <th>Price €</th>
-      </tr>
-    </thead>
-
-    <tbody>
+    <p id="notice"><%= notice %></p>
+    <div class="container">
       <% @spots.each do |spot| %>
-        <tr>
-          <td class="table-secondary"><%= spot.title %></td>
-          <td class="table-secondary"><%= spot.description %></td>
-          <td class="table-secondary"><%= spot.address %></td>
-          <td class="table-secondary"><%= spot.capacity %></td>
-          <td class="table-secondary"><%= spot.price %></td>
-          <td><%= link_to 'Show', spot, class: "text-white btn btn-primary"%></td>
-          <td><%= link_to 'Edit', edit_spot_path(spot), class: "text-white btn btn-warning"%></td>
-          <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        </tr>
+        <div class="card-product">
+          <img src="<%= cl_image_path spot.photos.first.key %>" class="d-block w-30" alt="...">
+          <div class="card-product-infos">
+            <h2><%= spot.title %></h2>
+            <p><%= spot.address %></p>
+            <p><%= spot.price %></p>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-
-  <br>
-  <%= link_to 'New Spot', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
-
-
- </div>
- </div>
-
-<!--
-  <table class="table">
+      <br>
+      <%= link_to 'New Spot', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
+    </div>
 
 
 
-    <thead class="thead-dark">
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Address</th>
-        <th>Capacity</th>
-        <th>Price €</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @spots.each do |spot| %>
-        <tr>
-          <td class="table-secondary"><%= spot.title %></td>
-          <td class="table-secondary"><%= spot.description %></td>
-          <td class="table-secondary"><%= spot.address %></td>
-          <td class="table-secondary"><%= spot.capacity %></td>
-          <td class="table-secondary"><%= spot.price %></td>
-          <td><%= link_to 'Show', spot, class: "text-white btn btn-primary"%></td>
-          <td><%= link_to 'Edit', edit_spot_path(spot), class: "text-white btn btn-warning"%></td>
-          <td><%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-  <%= link_to 'New Restaurant', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
--->
-
-</div>
