@@ -14,20 +14,20 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @spot = Spot.find(params[:spot_id])
+    @booking.booking_price = @booking.spot.price
     @booking.spot = @spot
+    @booking.user_id = current_user
+    @booking.spot_id = @spot.id
     @booking.save
-    redirect_to spot_path(@spot)
+    redirect_to spot_path(@spot
   end
 
   def edit
     @booking = Booking.find(params[:id])
-    authorize @booking
   end
 
   def update
     @booking = Booking.find(params[:id])
-    authorize @booking
     if @booking.update(booking_params)
       redirect_to booking_path(@booking[:id])
     else
@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :user_id, :spot_id, :price)
+    params.require(:booking).permit(:start_time, :end_time, :user_id, :spot_id, :booking_price)
   end
 end
 
