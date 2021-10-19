@@ -5,7 +5,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @booking = Booking.new
+    @booking = Booking.new(spot_id: @spot)
   end
 
   def new
