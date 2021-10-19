@@ -1,0 +1,19 @@
+<div class="background">
+<h1>Liste des Bookings :</h1>
+  <div class="cards">
+    <p id="notice"><%= notice %></p>
+    <div class="container">
+      <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <%# <%= cl_image_tag(spot_id.photos.first.key, :width => 300, :height => 200, :crop => :fill)%>
+          <div class="card-product-infos">
+            <h2>Spot : <%= booking.spot.title %></h2>
+            <h2>Address : <%= booking.spot.address %></h2>
+            <p>Price: <%= booking.booking_price %></p>
+            <p> Date: <%=  booking.created_at %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
