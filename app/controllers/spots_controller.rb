@@ -6,7 +6,17 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @booking = Booking.new(spot_id: @spot)
+
+    @bookings = @spot.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        date: booking.date,
+
+      }
+    end
   end
+
+
 
   def new
     @spot = Spot.new # needed to instantiate the form_for
@@ -49,4 +59,11 @@ class SpotsController < ApplicationController
   def spot_params
     params.require(:spot).permit(:address, :title, :description, :capacity, :price, photos: [])
   end
+
+
+
+
+
+
 end
+
