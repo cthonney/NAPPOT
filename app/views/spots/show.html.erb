@@ -10,19 +10,15 @@
       </div>
       <div class="container" >
         <h1>
-        <%= @spot.title %>
+          <%= @spot.title %>
         </h1>
-        <strong>Address:</strong>
-        <%= @spot.address %>
+        <i class="fas fa-map-marker"></i> <%= @spot.address %>
         <br>
-        <strong>Capacity:</strong>
-        <%= @spot.capacity %>
+       <i class="fas fa-bed"></i> <%= @spot.capacity %>
         <br>
-        <strong>Description:</strong>
-        <%= @spot.description %>
+        <i class="fas fa-stream"></i> <%= @spot.description %>
         <br>
-        <strong>Price:</strong>
-        <%= @spot.price %>
+        <i class="fas fa-coins"></i> <%= @spot.price %>
         <br>
       </div>
       <br>
