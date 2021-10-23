@@ -1,10 +1,7 @@
 <div class="background">
-<h1>Liste des Spots :</h1>
-  <div class="cards">
-
-
+  <div class="container">
     <p id="notice"><%= notice %></p>
-    <div class="container">
+    <div class="cards">
       <% @spots.each do |spot| %>
         <div class="card-product">
           <%= cl_image_tag(spot.photos.first.key, :width => 300, :height => 200, :crop => :fill)%>
@@ -15,13 +12,14 @@
             <%= link_to 'Show', spot, class: "text-white btn btn-primary"%>
             <%= link_to 'Edit', edit_spot_path(spot), class: "text-white btn btn-warning"%>
             <%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-
           </div>
         </div>
       <% end %>
-      <br>
-      <%= link_to 'New Spot', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
     </div>
+    <br>
+    <%= link_to 'New Spot', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
+  </div>
+</div>
 
 
 
