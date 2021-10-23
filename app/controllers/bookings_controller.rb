@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.booking_price = @spot.price
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to spot_path(@spot)
+      redirect_to bookings_path
     else
       redirect_to root_path
     end
