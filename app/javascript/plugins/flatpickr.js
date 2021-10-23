@@ -15,7 +15,6 @@ function initFlatPickr() {
       inline: true,
       dateFormat: "Y-m-d",
       "disable": bookings,
-      clickOpens: true,
     });
   }
 }

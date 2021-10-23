@@ -2,9 +2,15 @@
   <div class="container" >
     <div class="card-show" >
       <div class="container" >
+        <%= render 'shared/carouselshow', spot: @spot %>
+        <br>
+        <%= link_to 'Edit', edit_spot_path(@spot), :class => "btn btn-outline-secondary btn-sm" %> |
+        <%= link_to 'Back', spots_path, :class => "btn btn-outline-secondary btn-sm" %>
+        <%# <%= link_to 'Book this Spot', spots_path, :class => "btn btn-outline-info" %>
+      </div>
+      <div class="container" >
         <h1>
-
-          <%= @spot.title %>
+        <%= @spot.title %>
         </h1>
         <strong>Address:</strong>
         <%= @spot.address %>
@@ -19,13 +25,6 @@
         <%= @spot.price %>
         <br>
       </div>
-      <div class="container" >
-        <%= render 'shared/carouselshow', spot: @spot %>
-        <br>
-        <%= link_to 'Edit', edit_spot_path(@spot), :class => "btn btn-outline-secondary btn-sm" %> |
-        <%= link_to 'Back', spots_path, :class => "btn btn-outline-secondary btn-sm" %>
-        <%# <%= link_to 'Book this Spot', spots_path, :class => "btn btn-outline-info" %>
-      </div>
       <br>
       <div class="form-wrapper">
         <%= simple_form_for [@spot, @booking] do |f| %>
@@ -38,13 +37,16 @@
                     input_html: { id: "date", class: "d-none"}%>
           </div>
           <div class="form-actions">
-            <%= f.button :submit, :class => "btn btn-primary" %>
+            <%= f.button :submit, :class => "btn btn-info btn-lg" %>
           </div>
         <% end %>
       </div>
     </div>
+    <div id="booking-date"
+      data-bookings="<%= @bookings_dates.to_json %>">
+    </div>
   </div>
+</div>
   <!-- [...] -->
-  <div id="booking-date"
-     data-bookings="<%= @bookings_dates.to_json %>">
+
     <%# d-none = class bootstrap pour masquer %>

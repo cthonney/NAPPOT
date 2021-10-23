@@ -1,8 +1,11 @@
 
   <div class="background">
   <div class="container">
-    <div class="button">
-      <%= link_to 'New Spot', new_spot_path, class:"btn btn-outline-info" %>
+    <div id="add-spot-box">
+      <h2>Qu'est ce que vous attendez pour ajouter votre spot?</h2>
+      <div id="button">
+        <%= link_to 'New Spot', new_spot_path, class:"btn btn-info btn-lg" %>
+      </div>
     </div>
     <p id="notice"><%= notice %></p>
     <div class="cards">
