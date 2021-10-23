@@ -1,20 +1,21 @@
 <div class="background">
-<h1>Liste des Bookings :</h1>
-  <div class="cards">
-    <p id="notice"><%= notice %></p>
-    <div class="container">
-      <% @bookings.each do |booking| %>
-        <div class="card-product">
-          <%# <%= cl_image_tag(spot_id.photos.first.key, :width => 300, :height => 200, :crop => :fill)%>
-          <div class="card-product-infos">
+  <div class="container">
+    <div id="add-spot-box">
+      <h2>Vos siestes réservées :</h2>
+      <%= image_tag "carrot.png", alt: "Nappot logo", style: "height:50px;width:50px" %>
+    </div>
+    <div id="card-bookings">
+      <div class="container">
+        <% @bookings.each do |booking| %>
+          <div class="card-booking-one">
             <h2>Spot : <%= booking.spot.title %></h2>
             <h2>Address : <%= booking.spot.address %></h2>
-            <p>Price: <%= booking.booking_price %></p>
-            <p> Date: <%=  booking.created_at %></p>
-
+            <p>Price: <%= booking.booking_price %> MUR</p>
+            <p>Date: <%=  booking.date %></p>
+            <p>Heure: <%=  booking.start_time %></p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
