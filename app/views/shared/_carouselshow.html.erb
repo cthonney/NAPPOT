@@ -2,11 +2,11 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
   <div class="carousel-item active">
-       <%= cl_image_tag(spot.photos.first.key, :width => 400, :height => 250, :crop => :fill, class:"d-block w-100 h-100")%>
+       <%= cl_image_tag(spot.photos.first.key, :width => 400, :height => 250, :crop => :fill, class:"d-block")%>
       </div>
    <% @spot.photos.slice(1..@spot.photos.length).each do |photo| %>
      <div class="carousel-item">
-       <%= cl_image_tag(photo.key, :width => 400, :height => 250, :crop => :fill, class:"d-block w-100 h-100")%>
+       <%= cl_image_tag(photo.key, :width => 400, :height => 250, :crop => :fill, class:"d-block")%>
       </div>
     <% end %>
   </div>
