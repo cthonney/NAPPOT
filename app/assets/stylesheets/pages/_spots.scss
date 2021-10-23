@@ -11,12 +11,13 @@ h1 {
 #add-spot-box {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   align-items: center;
 }
+
 #add-spot-box h2 {
   font-style: Helvetica;
   font-size: 20px;
