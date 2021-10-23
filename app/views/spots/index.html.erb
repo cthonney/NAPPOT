@@ -1,5 +1,9 @@
-<div class="background">
+
+  <div class="background">
   <div class="container">
+    <div class="button">
+      <%= link_to 'New Spot', new_spot_path, class:"btn btn-outline-info" %>
+    </div>
     <p id="notice"><%= notice %></p>
     <div class="cards">
       <% @spots.each do |spot| %>
@@ -9,17 +13,14 @@
             <h2><%= spot.title %></h2>
             <p>Location: <%= spot.address %></p>
             <p> Price: <%=  spot.price %> MUR</p>
-            <%= link_to 'Show', spot, class: "text-white btn btn-primary"%>
-            <%= link_to 'Edit', edit_spot_path(spot), class: "text-white btn btn-warning"%>
-            <%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            <div id="button">
+              <%= link_to 'Show', spot, class: "btn btn-outline-secondary btn-sm"%>
+              <%= link_to 'Edit', edit_spot_path(spot), class: "btn btn-outline-secondary btn-sm"%>
+            </div>
+            <%= link_to '', spot, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash btn-sm"  %>
           </div>
         </div>
       <% end %>
     </div>
-    <br>
-    <%= link_to 'New Spot', new_spot_path, class:"btn btn-primary btn-lg text-white" %>
   </div>
 </div>
-
-
-
